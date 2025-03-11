@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxhcfp1xrjwst"]
+[gd_scene load_steps=4 format=3 uid="uid://bxhcfp1xrjwst"]
 
 [ext_resource type="Script" uid="uid://cymrhlkp8p12p" path="res://scenes/main_menu/main_menu.gd" id="1_fsom3"]
-[ext_resource type="PackedScene" uid="uid://psqafhao30uw" path="res://scenes/ui_components/save_slot/save_slot.tscn" id="2_0ebjn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fsom3"]
+bg_color = Color(0.144063, 0.144063, 0.144062, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ebjn"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_fsom3")
@@ -10,10 +14,13 @@ script = ExtResource("1_fsom3")
 follow_viewport_enabled = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_bottom = 71.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="LabelGameTitle" type="Label" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
@@ -23,22 +30,148 @@ horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/MarginContainer"]
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/separation = 20
 
-[node name="SaveSlot" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer" instance=ExtResource("2_0ebjn")]
+[node name="ButtonNewGame" type="Button" parent="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer2"]
 layout_mode = 2
-slot_number = 1
+text = "New Game"
 
-[node name="SaveSlot2" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer" instance=ExtResource("2_0ebjn")]
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer2"]
 layout_mode = 2
-slot_number = 2
+text = "Saved Games"
 
-[node name="SaveSlot3" parent="CanvasLayer/VBoxContainer/MarginContainer/HBoxContainer" instance=ExtResource("2_0ebjn")]
+[node name="ItemListSaves" type="ItemList" parent="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-slot_number = 3
+size_flags_vertical = 3
+allow_search = false
+
+[node name="ButtonImportSave" type="Button" parent="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Import Save"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LabelSaveName" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "No Save File Selected"
+
+[node name="LabelPlayerName" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Player Name: "
+
+[node name="ButtonLoadGame" type="Button" parent="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Load Game"
+
+[node name="ButtonDeleteSave" type="Button" parent="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Delete Save"
+
+[node name="ButtonExportSave" type="Button" parent="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Export Save"
+
+[node name="CharacterCreation" type="PanelContainer" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fsom3")
+
+[node name="Label" type="Label" parent="CanvasLayer/CharacterCreation"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 36
+text = "Character Creation"
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/CharacterCreation"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/CharacterCreation/MarginContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/CharacterCreation/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Save Name:"
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/CharacterCreation/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ebjn")
+
+[node name="LineEditSaveName" type="LineEdit" parent="CanvasLayer/CharacterCreation/MarginContainer/GridContainer/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "enter name here"
+
+[node name="LabelSaveNameError" type="Label" parent="CanvasLayer/CharacterCreation/MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+
+[node name="Label2" type="Label" parent="CanvasLayer/CharacterCreation/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Player Name:"
+
+[node name="PanelContainer2" type="PanelContainer" parent="CanvasLayer/CharacterCreation/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ebjn")
+
+[node name="LineEditPlayerName" type="LineEdit" parent="CanvasLayer/CharacterCreation/MarginContainer/GridContainer/PanelContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "enter name here"
+
+[node name="LabelPlayerNameError" type="Label" parent="CanvasLayer/CharacterCreation/MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+
+[node name="ButtonCreateSave" type="Button" parent="CanvasLayer/CharacterCreation"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "New Game"
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer2/ButtonNewGame" to="." method="_on_button_new_game_pressed"]
+[connection signal="item_selected" from="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer2/ItemListSaves" to="." method="_on_item_list_saves_item_selected"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer2/ButtonImportSave" to="." method="_on_button_import_save_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer/ButtonDeleteSave" to="." method="_on_button_delete_save_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer/ButtonExportSave" to="." method="_on_button_export_save_pressed"]
+[connection signal="pressed" from="CanvasLayer/CharacterCreation/ButtonCreateSave" to="." method="_on_button_create_save_pressed"]
