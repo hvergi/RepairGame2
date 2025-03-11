@@ -49,7 +49,7 @@ jobs:
           name: game_web
           path: game_web.zip
   release:
-    needs: [web, linux, windows]
+    needs: [web]
     runs-on: ubuntu-latest
     permissions:
       contents: write
