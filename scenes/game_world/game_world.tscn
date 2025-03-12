@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://brfhobnjgm6vv"]
+
+[ext_resource type="Script" uid="uid://c7hxnsyi17d4k" path="res://scenes/game_world/game_world.gd" id="1_uie3o"]
+[ext_resource type="Resource" uid="uid://d1yypxfqddcfe" path="res://resources/game_save.tres" id="2_254f3"]
+
+[node name="GameWorld" type="Node2D"]
+script = ExtResource("1_uie3o")
+save_data = ExtResource("2_254f3")

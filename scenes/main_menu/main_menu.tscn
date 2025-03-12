@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxhcfp1xrjwst"]
+[gd_scene load_steps=5 format=3 uid="uid://bxhcfp1xrjwst"]
 
 [ext_resource type="Script" uid="uid://cymrhlkp8p12p" path="res://scenes/main_menu/main_menu.gd" id="1_fsom3"]
+[ext_resource type="Resource" uid="uid://d1yypxfqddcfe" path="res://resources/game_save.tres" id="2_0ebjn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fsom3"]
 bg_color = Color(0.144063, 0.144063, 0.144062, 1)
@@ -9,6 +10,7 @@ bg_color = Color(0.144063, 0.144063, 0.144062, 1)
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_fsom3")
+save_data = ExtResource("2_0ebjn")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
@@ -77,6 +79,21 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 text = "Player Name: "
+
+[node name="LabelRepairLevel" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="LabelCoins" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="LabelSaveDate" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
 
 [node name="ButtonLoadGame" type="Button" parent="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -172,6 +189,7 @@ text = "New Game"
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer2/ButtonNewGame" to="." method="_on_button_new_game_pressed"]
 [connection signal="item_selected" from="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer2/ItemListSaves" to="." method="_on_item_list_saves_item_selected"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer2/ButtonImportSave" to="." method="_on_button_import_save_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer/ButtonLoadGame" to="." method="_on_button_load_game_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer/ButtonDeleteSave" to="." method="_on_button_delete_save_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer/ButtonExportSave" to="." method="_on_button_export_save_pressed"]
 [connection signal="pressed" from="CanvasLayer/CharacterCreation/ButtonCreateSave" to="." method="_on_button_create_save_pressed"]

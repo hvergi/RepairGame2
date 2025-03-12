@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var save_data:SaveData
 
 var filepath:String = ""
 var file_load_callback = JavaScriptBridge.create_callback(on_file_dialog_confirmed)
@@ -26,13 +27,25 @@ func update_save_actions(index: int) -> void:
 		%ButtonDeleteSave.visible = false
 		%ButtonExportSave.visible = false
 		%LabelPlayerName.visible = false
+		%LabelSaveDate.visible = false
+		%LabelCoins.visible = false
+		%LabelRepairLevel.visible = false
 		return
 	if(FileAccess.file_exists(filepath)):
 		var json_file = FileAccess.open(filepath, FileAccess.READ)
-		%LabelSaveName.text = "Save File: " + %ItemListSaves.get_item_text(index)
-		%LabelPlayerName.text = json_file.get_as_text()
-		%LabelPlayerName.visible = true
+		var my_save_data = SaveData.new()
+		my_save_data.set_from_save_dict(JSON.parse_string(json_file.get_as_text()))
+		save_data.set_from_save_dict(my_save_data.get_dict_from_save())
 		json_file.close()
+		%LabelSaveName.text = "Save File: " + %ItemListSaves.get_item_text(index)
+		%LabelPlayerName.text = "Player Name: " + my_save_data.PlayerName
+		%LabelPlayerName.visible = true
+		%LabelSaveDate.text = "Last Played: " + my_save_data.SaveDate
+		%LabelSaveDate.visible = true
+		%LabelCoins.text = "Coins: " + str(my_save_data.Coins)
+		%LabelCoins.visible = true
+		%LabelRepairLevel.text = "Repair Level: " + str(my_save_data.RepairLevel)
+		%LabelRepairLevel.visible = true
 		%ButtonLoadGame.visible = true
 		%ButtonDeleteSave.visible = true
 		%ButtonExportSave.visible = true
@@ -42,6 +55,9 @@ func update_save_actions(index: int) -> void:
 		%ButtonDeleteSave.visible = false
 		%ButtonExportSave.visible = false
 		%LabelPlayerName.visible = false
+		%LabelSaveDate.visible = false
+		%LabelCoins.visible = false
+		%LabelRepairLevel.visible = false
 
 
 func _on_item_list_saves_item_selected(index: int) -> void:
@@ -58,13 +74,15 @@ func _on_button_create_save_pressed() -> void:
 		return
 	if(%LineEditPlayerName.text == ""):
 		%LineEditPlayerName.text = "Insubordinate"
-	var json_file = FileAccess.open("user://" + %LineEditSaveName.text + ".sav", FileAccess.WRITE_READ)
-	json_file.store_line(%LineEditPlayerName.text)
-	json_file.close()
+	var my_save_data:SaveData = SaveData.new()
+	my_save_data.setup_save_data(%LineEditPlayerName.text, "user://" + %LineEditSaveName.text + ".sav")
+	my_save_data.save_to_file()
 	update_save_list()
+	save_data.set_from_save_dict(my_save_data.get_dict_from_save())
 	%CharacterCreation.visible = false
 	%LineEditPlayerName.text = ""
 	%LineEditSaveName.text = ""
+	start_game()
 	
 
 
@@ -122,7 +140,14 @@ func on_file_dialog_confirmed(args) -> void:
 		exporthold = args
 		return
 	var json_file = FileAccess.open(importpath, FileAccess.WRITE_READ)
-	print(JavaScriptBridge.js_buffer_to_packed_byte_array(args[1]))
+	
 	json_file.store_string(JavaScriptBridge.js_buffer_to_packed_byte_array(args[1]).get_string_from_utf8())
 	json_file.close()
 	update_save_list()
+
+
+func _on_button_load_game_pressed() -> void:
+	start_game()
+
+func start_game() -> void:
+	get_tree().change_scene_to_file("res://scenes/game_world/game_world.tscn")

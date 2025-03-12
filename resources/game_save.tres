@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SaveData" load_steps=2 format=3 uid="uid://d1yypxfqddcfe"]
+
+[ext_resource type="Script" uid="uid://bwtbhm8pds6xh" path="res://scripts/resources/save_data.gd" id="1_d7jjw"]
+
+[resource]
+script = ExtResource("1_d7jjw")
+PlayerName = ""
+RepairLevel = 0.0
+Coins = 0
+SaveDate = ""
+SaveVersion = "1.0.0"
+metadata/_custom_type_script = "uid://bwtbhm8pds6xh"
