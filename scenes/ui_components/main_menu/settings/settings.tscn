@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjl6kpkmqewxh"]
+
+[ext_resource type="PackedScene" uid="uid://clfi8g6ceswai" path="res://scenes/ui_components/window_template/window_template.tscn" id="1_mv3ai"]
+[ext_resource type="Script" uid="uid://bpbttmsrk4jrq" path="res://scenes/ui_components/main_menu/settings/settings.gd" id="2_arwvn"]
+
+[node name="Settings" instance=ExtResource("1_mv3ai")]
+script = ExtResource("2_arwvn")
+
+[node name="Label" parent="PanelContainer/VBoxContainer/PanelContainer" index="0"]
+text = "Settings"

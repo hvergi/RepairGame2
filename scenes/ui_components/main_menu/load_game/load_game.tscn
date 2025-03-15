@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3m0hwx02fco4"]
+
+[ext_resource type="PackedScene" uid="uid://clfi8g6ceswai" path="res://scenes/ui_components/window_template/window_template.tscn" id="1_bng5i"]
+[ext_resource type="Script" uid="uid://cb7wmimih5p7u" path="res://scenes/ui_components/main_menu/load_game/load_game.gd" id="2_ouffq"]
+[ext_resource type="PackedScene" uid="uid://dttuvisk053e7" path="res://scenes/ui_components/save_row/save_row.tscn" id="3_264ky"]
+
+[node name="LoadGame" instance=ExtResource("1_bng5i")]
+script = ExtResource("2_ouffq")
+save_row_scene = ExtResource("3_264ky")
+
+[node name="Label" parent="PanelContainer/VBoxContainer/PanelContainer" index="0"]
+text = "Load Game"
+
+[node name="ButtonImportSave" type="Button" parent="PanelContainer/VBoxContainer" index="1"]
+layout_mode = 2
+text = "Import Save"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="SaveRowHolder" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ButtonImportSave" to="." method="_on_button_import_save_pressed"]

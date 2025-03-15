@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SaveFile" load_steps=3 format=3 uid="uid://bmiw77gr6ula4"]
+
+[ext_resource type="Script" uid="uid://dff33fqb8d1up" path="res://scripts/resources/save_file.gd" id="1_8nw1v"]
+[ext_resource type="Resource" uid="uid://bdolfjlgjlqci" path="res://resources/main_player.tres" id="1_uhfnq"]
+
+[resource]
+script = ExtResource("1_8nw1v")
+save_name = ""
+save_version = 0
+save_timestamp = ""
+player_data = ExtResource("1_uhfnq")
+metadata/_custom_type_script = "uid://dff33fqb8d1up"

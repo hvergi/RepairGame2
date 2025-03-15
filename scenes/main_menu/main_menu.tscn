@@ -1,177 +1,79 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxhcfp1xrjwst"]
+[gd_scene load_steps=8 format=3 uid="uid://b2m5df0cd3r4s"]
 
-[ext_resource type="Script" uid="uid://cymrhlkp8p12p" path="res://scenes/main_menu/main_menu.gd" id="1_fsom3"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fsom3"]
-bg_color = Color(0.144063, 0.144063, 0.144062, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ebjn"]
+[ext_resource type="PackedScene" uid="uid://dg2ihocuflrvx" path="res://scenes/scaled_camera/scaled_camera.tscn" id="1_0ebjn"]
+[ext_resource type="Script" uid="uid://dhn1ihvyddqel" path="res://scenes/main_menu/main_menu.gd" id="1_fsom3"]
+[ext_resource type="PackedScene" uid="uid://cv7dj5mgkain4" path="res://scenes/ui_components/main_menu/new_game/new_game.tscn" id="2_wem23"]
+[ext_resource type="PackedScene" uid="uid://b3m0hwx02fco4" path="res://scenes/ui_components/main_menu/load_game/load_game.tscn" id="3_5seab"]
+[ext_resource type="PackedScene" uid="uid://buaecuif54vk2" path="res://scenes/ui_components/main_menu/credits/credits.tscn" id="4_4xg86"]
+[ext_resource type="PackedScene" uid="uid://cjl6kpkmqewxh" path="res://scenes/ui_components/main_menu/settings/settings.tscn" id="6_x2yjq"]
+[ext_resource type="Resource" uid="uid://bmiw77gr6ula4" path="res://resources/main_save.tres" id="7_4xg86"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_fsom3")
+new_game_window = ExtResource("2_wem23")
+load_game_window = ExtResource("3_5seab")
+credits_window = ExtResource("4_4xg86")
+settings_window = ExtResource("6_x2yjq")
+main_save_file = ExtResource("7_4xg86")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-follow_viewport_enabled = true
+unique_name_in_owner = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
-anchors_preset = 15
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
+offset_bottom = 88.0
 grow_horizontal = 2
-grow_vertical = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="LabelGameTitle" type="Label" parent="CanvasLayer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 48
+theme_type_variation = &"GameTitle"
 text = "Madnath's Repair Game"
 horizontal_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/VBoxContainer/MarginContainer"]
-layout_mode = 2
-columns = 2
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="ButtonNewGame" type="Button" parent="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer2"]
-layout_mode = 2
-text = "New Game"
-
-[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer2"]
-layout_mode = 2
-text = "Saved Games"
-
-[node name="ItemListSaves" type="ItemList" parent="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer2"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-size_flags_vertical = 3
-allow_search = false
-
-[node name="ButtonImportSave" type="Button" parent="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer2"]
-layout_mode = 2
-text = "Import Save"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="LabelSaveName" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "No Save File Selected"
-
-[node name="LabelPlayerName" type="Label" parent="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-text = "Player Name: "
-
-[node name="ButtonLoadGame" type="Button" parent="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-text = "Load Game"
-
-[node name="ButtonDeleteSave" type="Button" parent="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-text = "Delete Save"
-
-[node name="ButtonExportSave" type="Button" parent="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-text = "Export Save"
-
-[node name="CharacterCreation" type="PanelContainer" parent="CanvasLayer"]
-unique_name_in_owner = true
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -124.0
+offset_right = 112.0
+offset_bottom = 124.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_fsom3")
+theme_override_constants/separation = 24
 
-[node name="Label" type="Label" parent="CanvasLayer/CharacterCreation"]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 36
-text = "Character Creation"
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/CharacterCreation"]
-layout_mode = 2
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 30
-theme_override_constants/margin_bottom = 30
-
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/CharacterCreation/MarginContainer"]
-layout_mode = 2
-columns = 3
-
-[node name="Label" type="Label" parent="CanvasLayer/CharacterCreation/MarginContainer/GridContainer"]
-layout_mode = 2
-text = "Save Name:"
-
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/CharacterCreation/MarginContainer/GridContainer"]
-custom_minimum_size = Vector2(300, 0)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_0ebjn")
-
-[node name="LineEditSaveName" type="LineEdit" parent="CanvasLayer/CharacterCreation/MarginContainer/GridContainer/PanelContainer"]
+[node name="BtnContinue" type="Button" parent="CanvasLayer/VBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
-placeholder_text = "enter name here"
+theme_type_variation = &"MainMenuButton"
+disabled = true
+text = "Continue Last Save"
 
-[node name="LabelSaveNameError" type="Label" parent="CanvasLayer/CharacterCreation/MarginContainer/GridContainer"]
-unique_name_in_owner = true
+[node name="BtnNewGame" type="Button" parent="CanvasLayer/VBoxContainer2"]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
-
-[node name="Label2" type="Label" parent="CanvasLayer/CharacterCreation/MarginContainer/GridContainer"]
-layout_mode = 2
-text = "Player Name:"
-
-[node name="PanelContainer2" type="PanelContainer" parent="CanvasLayer/CharacterCreation/MarginContainer/GridContainer"]
-custom_minimum_size = Vector2(300, 0)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_0ebjn")
-
-[node name="LineEditPlayerName" type="LineEdit" parent="CanvasLayer/CharacterCreation/MarginContainer/GridContainer/PanelContainer2"]
-unique_name_in_owner = true
-layout_mode = 2
-placeholder_text = "enter name here"
-
-[node name="LabelPlayerNameError" type="Label" parent="CanvasLayer/CharacterCreation/MarginContainer/GridContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
-
-[node name="ButtonCreateSave" type="Button" parent="CanvasLayer/CharacterCreation"]
-layout_mode = 2
-size_flags_vertical = 8
+theme_type_variation = &"MainMenuButton"
 text = "New Game"
 
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer2/ButtonNewGame" to="." method="_on_button_new_game_pressed"]
-[connection signal="item_selected" from="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer2/ItemListSaves" to="." method="_on_item_list_saves_item_selected"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer2/ButtonImportSave" to="." method="_on_button_import_save_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer/ButtonDeleteSave" to="." method="_on_button_delete_save_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/GridContainer/VBoxContainer/ButtonExportSave" to="." method="_on_button_export_save_pressed"]
-[connection signal="pressed" from="CanvasLayer/CharacterCreation/ButtonCreateSave" to="." method="_on_button_create_save_pressed"]
+[node name="BtnLoadGame" type="Button" parent="CanvasLayer/VBoxContainer2"]
+layout_mode = 2
+theme_type_variation = &"MainMenuButton"
+text = "Load Game"
+
+[node name="BtnSettings" type="Button" parent="CanvasLayer/VBoxContainer2"]
+layout_mode = 2
+theme_type_variation = &"MainMenuButton"
+text = "Settings"
+
+[node name="BtnCredits" type="Button" parent="CanvasLayer/VBoxContainer2"]
+layout_mode = 2
+theme_type_variation = &"MainMenuButton"
+text = "Credits"
+
+[node name="ScaledCamera" parent="." instance=ExtResource("1_0ebjn")]
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer2/BtnContinue" to="." method="_on_btn_continue_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer2/BtnNewGame" to="." method="_on_btn_new_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer2/BtnLoadGame" to="." method="_on_btn_load_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer2/BtnSettings" to="." method="_on_btn_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer2/BtnCredits" to="." method="_on_btn_credits_pressed"]

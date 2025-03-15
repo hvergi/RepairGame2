@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://dttuvisk053e7"]
+
+[ext_resource type="Script" uid="uid://covqie67y56tf" path="res://scenes/ui_components/save_row/save_row.gd" id="1_w5ch4"]
+[ext_resource type="Resource" uid="uid://bmiw77gr6ula4" path="res://resources/main_save.tres" id="2_13asg"]
+
+[node name="SaveRow" type="HBoxContainer"]
+script = ExtResource("1_w5ch4")
+main_save_file = ExtResource("2_13asg")
+
+[node name="ButtonLoadGame" type="Button" parent="."]
+layout_mode = 2
+text = "Load Game"
+
+[node name="LabelSaveName" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Save Name: Test"
+
+[node name="LabelPlayerName" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Player Name: Hvergi"
+
+[node name="LabelTimeStamp" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Last Load: FGRDDJNDNGNNFN"
+
+[node name="ButtonExportSave" type="Button" parent="."]
+layout_mode = 2
+text = "Export"
+
+[node name="ButtonDeleteSave" type="Button" parent="."]
+layout_mode = 2
+theme_type_variation = &"WarningButton"
+text = "Delete"
+
+[connection signal="pressed" from="ButtonLoadGame" to="." method="_on_button_load_game_pressed"]
+[connection signal="pressed" from="ButtonExportSave" to="." method="_on_button_export_save_pressed"]
+[connection signal="pressed" from="ButtonDeleteSave" to="." method="_on_button_delete_save_pressed"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://brfhobnjgm6vv"]
+
+[ext_resource type="Script" uid="uid://c7hxnsyi17d4k" path="res://scenes/game_world/game_world.gd" id="1_uie3o"]
+[ext_resource type="Resource" uid="uid://bmiw77gr6ula4" path="res://resources/main_save.tres" id="2_mjgxe"]
+[ext_resource type="PackedScene" uid="uid://dg2ihocuflrvx" path="res://scenes/scaled_camera/scaled_camera.tscn" id="3_mjgxe"]
+
+[node name="GameWorld" type="Node2D"]
+texture_filter = 3
+script = ExtResource("1_uie3o")
+save_file = ExtResource("2_mjgxe")
+
+[node name="ScaledCamera" parent="." instance=ExtResource("3_mjgxe")]
