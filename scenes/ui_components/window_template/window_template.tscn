@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://clfi8g6ceswai"]
+
+[ext_resource type="Script" uid="uid://0l7nbrs52leu" path="res://scenes/ui_components/window_template/window_template.gd" id="1_62ma0"]
+
+[node name="WindowTemplate" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+script = ExtResource("1_62ma0")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"TitleBarContainer"
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_type_variation = &"LabelTitle"
+text = "Title"
+
+[node name="ButtonExit" type="Button" parent="PanelContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_type_variation = &"ButtonQuit"
+text = " X "
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/PanelContainer/ButtonExit" to="." method="_on_button_exit_pressed"]

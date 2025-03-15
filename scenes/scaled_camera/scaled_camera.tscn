@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dg2ihocuflrvx"]
+
+[ext_resource type="Script" uid="uid://bmlffmbt6bupo" path="res://scenes/scaled_camera/scaled_camera.gd" id="1_liaap"]
+
+[node name="ScaledCamera" type="Camera2D"]
+anchor_mode = 0
+script = ExtResource("1_liaap")

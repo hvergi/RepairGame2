@@ -1,0 +1,182 @@
+[gd_resource type="Theme" load_steps=21 format=3 uid="uid://cqw6l6gxjbxe5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewcjl"]
+bg_color = Color(0.0221911, 0.051257, 0.0778613, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+expand_margin_left = 4.0
+expand_margin_top = 32.0
+expand_margin_right = 4.0
+expand_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_706eb"]
+bg_color = Color(0.109804, 0.203922, 0.282353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kwgwx"]
+bg_color = Color(0.0376999, 0.0774512, 0.110581, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_revjw"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.486275, 0.658824, 0.8, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pdl54"]
+bg_color = Color(0.141422, 0.252619, 0.345352, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.13897, 0.248865, 0.340505, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7svbk"]
+bg_color = Color(0.109804, 0.203922, 0.282353, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.13897, 0.248865, 0.340505, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jdwy8"]
+bg_color = Color(0.054902, 0.101961, 0.141176, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.13897, 0.248865, 0.340505, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6srki"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.982749, 1.23455e-05, 5.77569e-07, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ssso"]
+bg_color = Color(0.638884, 2.10572e-06, 4.81308e-08, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.898275, 6.1848e-06, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_227fx"]
+bg_color = Color(0.579254, 1.97336e-06, 3.85046e-07, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.84956, 3.46541e-06, 6.73831e-07, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rlutd"]
+bg_color = Color(0.455403, 1.10099e-06, 9.62615e-08, 1)
+border_color = Color(0.733002, 3.62184e-06, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hvnl2"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.486275, 0.658824, 0.8, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ad55v"]
+bg_color = Color(0.054902, 0.101961, 0.141176, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6h6mc"]
+bg_color = Color(0.0376999, 0.0774512, 0.110581, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5l7as"]
+bg_color = Color(0.0656062, 0.11718, 0.160163, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tup5"]
+bg_color = Color(0.0656062, 0.11718, 0.160163, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ovwd"]
+bg_color = Color(0.0377, 0.0774512, 0.110581, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lq14c"]
+bg_color = Color(0.645551, 2.56296e-06, 4.81307e-07, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.500741, 1.2153e-06, 1.44392e-07, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0nn2m"]
+bg_color = Color(0.605674, 1.66051e-06, 3.85046e-07, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.500741, 1.2153e-06, 1.44392e-07, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7qci3"]
+bg_color = Color(0.559523, 1.27546e-06, 3.36915e-07, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.500741, 1.2153e-06, 1.44392e-07, 1)
+border_blend = true
+
+[resource]
+AcceptDialog/colors/title_color = Color(0.937255, 0.74902, 0.0156863, 1)
+AcceptDialog/font_sizes/title_font_size = 24
+AcceptDialog/styles/embedded_border = SubResource("StyleBoxFlat_ewcjl")
+AcceptDialog/styles/panel = SubResource("StyleBoxFlat_706eb")
+Button/colors/font_color = Color(0.937255, 0.74902, 0.0156863, 1)
+Button/colors/font_disabled_color = Color(0.937255, 0.74902, 0.0156863, 0.396078)
+Button/colors/font_focus_color = Color(0.937255, 0.74902, 0.0156863, 1)
+Button/colors/font_hover_color = Color(0.999333, 0.834175, 0.343577, 1)
+Button/colors/font_pressed_color = Color(0.884486, 0.7061, 0.00949716, 1)
+Button/styles/disabled = SubResource("StyleBoxFlat_kwgwx")
+Button/styles/focus = SubResource("StyleBoxFlat_revjw")
+Button/styles/hover = SubResource("StyleBoxFlat_pdl54")
+Button/styles/normal = SubResource("StyleBoxFlat_7svbk")
+Button/styles/pressed = SubResource("StyleBoxFlat_jdwy8")
+ButtonQuit/base_type = &"Button"
+ButtonQuit/colors/font_color = Color(0.0221911, 0.051257, 0.0778613, 1)
+ButtonQuit/colors/font_focus_color = Color(0.0221911, 0.051257, 0.0778613, 1)
+ButtonQuit/colors/font_hover_color = Color(0.0221911, 0.051257, 0.0778613, 1)
+ButtonQuit/colors/font_pressed_color = Color(0.0221911, 0.051257, 0.0778613, 1)
+ButtonQuit/constants/h_separation = 10
+ButtonQuit/font_sizes/font_size = 48
+ButtonQuit/styles/focus = SubResource("StyleBoxFlat_6srki")
+ButtonQuit/styles/hover = SubResource("StyleBoxFlat_1ssso")
+ButtonQuit/styles/normal = SubResource("StyleBoxFlat_227fx")
+ButtonQuit/styles/pressed = SubResource("StyleBoxFlat_rlutd")
+GameTitle/base_type = &"Label"
+GameTitle/font_sizes/font_size = 64
+Label/colors/font_color = Color(0.937255, 0.74902, 0.0156863, 1)
+LabelTitle/base_type = &"Label"
+LabelTitle/colors/font_color = Color(0.937255, 0.74902, 0.0156863, 1)
+LabelTitle/font_sizes/font_size = 48
+LineEdit/colors/font_color = Color(0.937255, 0.74902, 0.0156863, 1)
+LineEdit/colors/font_uneditable_color = Color(0.937255, 0.74902, 0.0156863, 0.396078)
+LineEdit/styles/focus = SubResource("StyleBoxFlat_hvnl2")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_ad55v")
+LineEdit/styles/read_only = SubResource("StyleBoxFlat_6h6mc")
+MainMenuButton/base_type = &"Button"
+MainMenuButton/font_sizes/font_size = 24
+Panel/styles/panel = SubResource("StyleBoxFlat_5l7as")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_3tup5")
+TitleBarContainer/base_type = &"PanelContainer"
+TitleBarContainer/styles/panel = SubResource("StyleBoxFlat_1ovwd")
+WarningButton/base_type = &"Button"
+WarningButton/colors/font_color = Color(0, 0, 0, 1)
+WarningButton/colors/font_focus_color = Color(0, 0, 0, 1)
+WarningButton/colors/font_hover_color = Color(0, 0, 0, 1)
+WarningButton/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+WarningButton/colors/font_pressed_color = Color(0, 0, 0, 1)
+WarningButton/styles/hover = SubResource("StyleBoxFlat_lq14c")
+WarningButton/styles/normal = SubResource("StyleBoxFlat_0nn2m")
+WarningButton/styles/pressed = SubResource("StyleBoxFlat_7qci3")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PlayerData" load_steps=2 format=3 uid="uid://bdolfjlgjlqci"]
+
+[ext_resource type="Script" uid="uid://dur4iqerqykwv" path="res://scripts/resources/player_data.gd" id="1_rogyn"]
+
+[resource]
+script = ExtResource("1_rogyn")
+player_name = ""
+repair_level = 0.0
+coins = 0
+metadata/_custom_type_script = "uid://dur4iqerqykwv"
